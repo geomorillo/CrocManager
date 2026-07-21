@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrocManager</title>
+  <link rel="stylesheet" href="http://app.local/css/style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🐊 CrocManager</h1>
+      <p>Transfiere archivos de forma segura entre computadores</p>
+      <div id="statusBar" class="status-bar">
+        <span id="installStatus">Verificando instalación...</span>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="send">Enviar</button>
+      <button class="tab" data-tab="receive">Recibir</button>
+      <button class="tab" data-tab="text">Texto</button>
+      <button class="tab" data-tab="history">Historial</button>
+    </nav>
+
+    <!-- ═══ TAB: ENVIAR ═══ -->
+    <div class="tab-content active" id="tab-send">
+      <div class="card">
+        <div class="field">
+          <label>Archivos a enviar</label>
+          <div class="input-group">
+            <input type="text" id="sendFiles" placeholder="Selecciona los archivos..." readonly>
+            <button class="btn" onclick="browseSendFiles()">📁 Examinar</button>
+            <button class="btn" onclick="browseSendFolder()">📂 Carpeta</button>
+            <button class="btn" onclick="clearSendFiles()">🗑️</button>
+          </div>
+          <ul id="sendFileList" class="file-list"></ul>
+          <p id="sendFileCount" class="file-count"></p>
+        </div>
+
+        <div class="field">
+          <label>Código personalizado <span class="hint">(opcional, mínimo 6 caracteres)</span></label>
+          <input type="text" id="sendCode" placeholder="Deja vacío para generar automáticamente" maxlength="50">
+        </div>
+
+        <button class="btn btn-primary" onclick="doSend()" id="btnSend" disabled>
+          🚀 Enviar
+        </button>
+
+        <div id="sendProgress" class="progress-container" style="display:none;">
+          <div class="progress-bar"><div class="progress-fill" id="sendProgressFill"></div></div>
+          <p id="sendProgressText" class="progress-text">Iniciando...</p>
+          <div id="sendCodeBox" class="code-display" style="display:none;">
+            <strong>Código:</strong>
+            <code id="sendCodeDisplay"></code>
+            <button class="btn btn-small" onclick="copyCode()">📋 Copiar</button>
+            <p class="hint">En el otro computador: <code id="receiveCommand"></code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ TAB: RECIBIR ═══ -->
+    <div class="tab-content" id="tab-receive">
+      <div class="card">
+        <div class="field">
+          <label>Código de transferencia</label>
+          <input type="text" id="receiveCode" placeholder="Ej: hummingbird-panda-singapore" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label>Carpeta de destino</label>
+          <div class="input-group">
+            <input type="text" id="receiveDest" placeholder="Selecciona la carpeta de destino..." readonly>
+            <button class="btn" onclick="browseReceiveDest()">📂 Seleccionar carpeta</button>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="doReceive()" id="btnReceive" disabled>
+          📥 Recibir
+        </button>
+
+        <div id="receiveProgress" class="progress-container" style="display:none;">
+          <div class="progress-bar"><div class="progress-fill" id="receiveProgressFill"></div></div>
+          <p id="receiveProgressText" class="progress-text">Esperando conexión...</p>
+        </div>
+
+        <div id="receiveResult" class="result" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- ═══ TAB: ENVIAR TEXTO ═══ -->
+    <div class="tab-content" id="tab-text">
+      <div class="card">
+        <div class="field">
+          <label>Texto a enviar</label>
+          <textarea id="textContent" rows="4" placeholder="Escribe o pega el texto aquí..."></textarea>
+        </div>
+
+        <div class="field">
+          <label>Código personalizado <span class="hint">(opcional, mínimo 6 caracteres)</span></label>
+          <input type="text" id="textCode" placeholder="Deja vacío para generar automáticamente" maxlength="50">
+        </div>
+
+        <button class="btn btn-primary" onclick="doSendText()" id="btnSendText" disabled>
+          📤 Enviar texto
+        </button>
+
+        <div id="textResult" class="result" style="display:none;">
+          <div class="code-display">
+            <strong>Código:</strong>
+            <code id="textCodeDisplay"></code>
+            <button class="btn btn-small" onclick="copyTextCode()">📋 Copiar</button>
+          </div>
+          <p class="hint">En el otro computador ejecuta: <code id="textReceiveCommand"></code></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ TAB: HISTORIAL ═══ -->
+    <div class="tab-content" id="tab-history">
+      <div class="card">
+        <div class="history-header">
+          <h3>📜 Historial de transferencias</h3>
+          <button class="btn" onclick="doClearHistory()">🗑️ Limpiar</button>
+        </div>
+        <div id="historyList" class="history-list">
+          <p class="empty-state">No hay transferencias aún</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>CrocManager v1.0</span>
+    <span>© 2026 Manuel Jhobanny Morillo Ordoñez</span>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="http://app.local/js/app.js"></script>
+</body>
+</html>
