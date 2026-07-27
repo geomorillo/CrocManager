@@ -10,22 +10,22 @@ CrocManager envuelve la herramienta CLI `croc` en una aplicación de escritorio 
 
 ---
 
-## ✨ Características
+##  Características
 
 | Característica | Descripción |
 |---|---|
-| 🚀 **Enviar archivos** | Selección múltiple de archivos y carpetas |
-| 📝 **Enviar texto** | Envía URLs, mensajes cortos o cualquier texto |
-| 📥 **Recibir archivos** | Ingresa el código y selecciona carpeta destino |
-| 🔒 **Cifrado E2E** | Usa PAKE (Password-Authenticated Key Exchange) |
-| 📊 **Progreso en tiempo real** | Barra de progreso con porcentaje, velocidad y ETA |
-| 📜 **Historial** | Registro local de todas las transferencias |
-| 🎨 **Tema oscuro** | Interfaz moderna tipo Tailwind |
-| 📋 **Copiar código** | Un clic copia el code phrase al portapapeles |
+|  **Enviar archivos** | Selección múltiple de archivos y carpetas |
+|  **Enviar texto** | Envía URLs, mensajes cortos o cualquier texto |
+|  **Recibir archivos** | Ingresa el código y selecciona carpeta destino |
+|  **Cifrado E2E** | Usa PAKE (Password-Authenticated Key Exchange) |
+|  **Progreso en tiempo real** | Barra de progreso con porcentaje, velocidad y ETA |
+|  **Historial** | Registro local de todas las transferencias |
+|  **Tema oscuro** | Interfaz moderna tipo Tailwind |
+|  **Copiar código** | Un clic copia el code phrase al portapapeles |
 
 ---
 
-## 📦 Requisitos
+##  Requisitos
 
 - **Windows 10 o superior** (o Windows Server 2019+)
 - **[WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)** (Evergreen Runtime)
@@ -34,7 +34,7 @@ CrocManager envuelve la herramienta CLI `croc` en una aplicación de escritorio 
 
 ---
 
-## 🚀 Instalación
+##  Instalación
 
 ### 1. Instalar croc
 
@@ -84,9 +84,9 @@ O ejecuta directamente el binario:
 
 1. Abre CrocManager
 2. Ve a la pestaña **Enviar**
-3. Haz clic en **📁 Examinar** para seleccionar archivos, o **📂 Carpeta** para una carpeta
+3. Haz clic en **Examinar** para seleccionar archivos, o **Carpeta** para una carpeta
 4. Opcional: ingresa un **código personalizado** (mín. 6 caracteres)
-5. Haz clic en **🚀 Enviar**
+5. Haz clic en **Enviar**
 6. Comparte el código generado con la otra persona
 
 ### Recibir archivos
@@ -94,7 +94,7 @@ O ejecuta directamente el binario:
 1. Ve a la pestaña **Recibir**
 2. Ingresa el código que te compartieron
 3. Selecciona la **carpeta de destino**
-4. Haz clic en **📥 Recibir**
+4. Haz clic en **Recibir**
 5. ¡Los archivos se descargan automáticamente!
 
 ### Enviar texto
@@ -102,17 +102,17 @@ O ejecuta directamente el binario:
 1. Ve a la pestaña **Texto**
 2. Escribe o pega el texto
 3. Opcional: código personalizado
-4. Haz clic en **📤 Enviar texto**
+4. Haz clic en **Enviar texto**
 
 ### Historial
 
 - Ve a la pestaña **Historial** para ver todas las transferencias
 - Muestra tipo, código, archivos, estado y tiempo
-- Usa **🗑️ Limpiar** para borrar el historial
+- Usa **Limpiar** para borrar el historial
 
 ---
 
-## 🏗️ Estructura del proyecto
+## Estructura del proyecto
 
 ```
 crocmanager/
@@ -135,7 +135,7 @@ crocmanager/
 
 ---
 
-## 🧠 Arquitectura
+##  Arquitectura
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -163,7 +163,7 @@ El progreso de las transferencias se transmite en vivo desde C# a JavaScript usa
 
 ---
 
-## ⚙️ Dependencias
+##  Dependencias
 
 | Paquete | Versión | Propósito |
 |---|---|---|
@@ -173,13 +173,13 @@ El progreso de las transferencias se transmite en vivo desde C# a JavaScript usa
 
 ---
 
-## 📄 Licencia
+##  Licencia
 
 MIT © 2026 **Manuel Jhobanny Morillo Ordoñez**
 
 ---
 
-## 🙏 Créditos
+##  Créditos
 
 - [schollz/croc](https://github.com/schollz/croc) — La increíble herramienta CLI que hace posible todo esto
 - [WebDesktop](https://github.com/geomorillo/webdesktop) — Framework .NET para apps desktop con web technologies
