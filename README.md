@@ -78,7 +78,7 @@ O ejecuta directamente el binario:
 
 ---
 
-## 🎮 Uso
+##  Uso
 
 ### Enviar archivos
 
